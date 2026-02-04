@@ -3,10 +3,10 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Accend Home Dashboard</title>
+<title>AI Course Generation</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -14,37 +14,29 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#07b6d5",
+                        "primary": "#08bcd4",
                         "background-light": "#f5f8f8",
-                        "background-dark": "#0F172A", // Deep Midnight
-                        "slate-navy": "#1E293B",
-                        "arctic-white": "#F8FAFC",
-                        "electric-cyan": "#06B6D4",
-                        "midnight-indigo": "#0F172A",
+                        "background-dark": "#102022",
                     },
                     fontFamily: {
-                        "display": ["Manrope", "sans-serif"]
+                        "display": ["Space Grotesk"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
                 },
             },
         }
     </script>
 <style>
-        body {
-            font-family: 'Manrope', sans-serif;
-            -webkit-tap-highlight-color: transparent;
+        .glow-cyan {
+            box-shadow: 0 0 40px rgba(8, 188, 212, 0.3);
         }
-        .cyan-glow {
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-        }
-        .card-border-glow {
-            border: 1px solid rgba(6, 182, 212, 0.2);
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: #4ADE80;
+            border-radius: 50%;
+            opacity: 0.6;
         }
     </style>
 <style>
@@ -53,134 +45,71 @@
     }
   </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-arctic-white min-h-screen flex flex-col">
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-hidden">
 <!-- TopAppBar -->
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
-<div class="flex items-center gap-3">
-<div class="relative">
-<div class="size-10 rounded-full bg-cover bg-center cyan-glow border-2 border-primary/50" data-alt="User profile avatar with premium glow" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxgSzzZox9XJLWlcApEISjk4XnVoahbm2xpDg1OGX9TIuImFOGImwIXoDi9h4fw-tBjjbfh3wcjd2_XTmMsRyT0upAnb0VuPHR_8cXn55nXVooEehtPJdrKuvolqsjTLf3Jz-86usYgZOd2TViLiGwvlszevD7C7mJBEWQgGsBwStRd_-qAQEPqZwowVa0d6PcLqLkelpfsCsKDwIGl8IXdIQjxyUjPR2Mord3ZExZIm0oPM5q--UgrMFBz8VkYjY8rNBjPvX0Pa1S");'>
-</div>
-</div>
-<div>
-<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Welcome back,</p>
-<h2 class="text-lg font-bold leading-tight tracking-tight text-slate-900 dark:text-arctic-white">Alex</h2>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-<span class="material-symbols-outlined text-2xl text-slate-600 dark:text-arctic-white">notifications</span>
+<div class="flex items-center p-6 pb-2 justify-end">
+<button class="text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined">close</span>
 </button>
 </div>
-</header>
-<main class="flex-1 overflow-y-auto pb-24">
-<!-- Goal Progress Card -->
-<section class="p-4">
-<div class="bg-white dark:bg-slate-navy rounded-xl p-5 shadow-lg border border-slate-200 dark:border-slate-800">
-<div class="flex justify-between items-start mb-4">
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col items-center justify-center px-6 relative">
+<!-- Decorative Floating Nodes (Particles) -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="particle top-1/4 left-1/4"></div>
+<div class="particle top-1/3 right-1/4"></div>
+<div class="particle bottom-1/3 left-1/3"></div>
+<div class="particle top-1/2 right-10"></div>
+<div class="particle bottom-1/4 right-1/3"></div>
+</div>
+<!-- Central 3D Mountain Peak Icon / HeaderImage Style -->
+<div class="w-full max-w-[320px] aspect-square relative flex items-center justify-center">
+<!-- Background Glow -->
+<div class="absolute w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+<!-- Mountain Visual -->
+<div class="relative z-10 w-64 h-64 flex items-center justify-center bg-gradient-to-b from-primary/30 to-transparent rounded-full p-1 border border-primary/20">
+<div class="w-full h-full bg-[#102123] rounded-full flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover flex flex-col justify-end" data-alt="3D glowing blue mountain peak with data nodes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxWcUjjzKCdta8_gF_RhQ5nwpUneBVCJedAeihImlpNMK7AM9nBW4kLAAzjUwSQ4nnfm2iKBo3wgPqfTBMLSYmrjvEJT8_11UmQFoU0dcIZbvnG0ARX6jxIE9DBORHJngrbtBgXssSQiC0HiVYTSTinjxUP0WKwr_3xSJ1ZWZnokyS_wDT99vGoL7fjpbIYN816caYovox02ziHuZ_YcECXRMalxdjr0ENUJYoabeB6rJjqi23mgH_Oz3ly3thMg_nFHQbi5T3QcTI");'>
+</div>
+</div>
+</div>
+<!-- Progress Ring Overlay -->
+<svg class="absolute inset-0 w-full h-full -rotate-90 scale-110" viewbox="0 0 100 100">
+<circle class="text-white/5" cx="50" cy="50" fill="transparent" r="46" stroke="currentColor" stroke-width="2"></circle>
+<circle class="text-primary" cx="50" cy="50" fill="transparent" r="46" stroke="currentColor" stroke-dasharray="289" stroke-dashoffset="100" stroke-width="3"></circle>
+</svg>
+</div>
+<!-- HeadlineText -->
+<div class="mt-12">
+<h2 class="text-white tracking-tight text-[32px] font-bold leading-tight px-4 text-center pb-3">
+                    Ascending your curriculum...
+                </h2>
+</div>
+<!-- BodyText -->
 <div>
-<p class="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Today's Goal</p>
-<h3 class="text-2xl font-extrabold text-slate-900 dark:text-arctic-white">Focus Session</h3>
-</div>
-<div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">
-                        STREAK: 12
-                    </div>
-</div>
-<div class="space-y-3">
-<div class="flex justify-between items-center text-sm">
-<span class="text-slate-600 dark:text-slate-400 font-medium">15/20 mins completed</span>
-<span class="text-slate-900 dark:text-arctic-white font-bold">75%</span>
+<p class="text-[#94A3B8] text-lg font-normal leading-relaxed pb-8 pt-1 px-8 text-center max-w-md">
+                    Our AI is crafting personalized accent drills for you
+                </p>
 </div>
 <!-- ProgressBar -->
-<div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-<div class="h-full bg-electric-cyan rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" style="width: 75%;"></div>
+<div class="w-full max-w-sm px-4">
+<div class="flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-white text-base font-medium leading-none">Processing language nodes</p>
+<p class="text-primary text-sm font-bold leading-none">65%</p>
 </div>
-<div class="pt-2">
-<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-lg transition-all active:scale-[0.98]">
-                            Keep Going
-                        </button>
+<div class="rounded-full bg-white/10 h-3 overflow-hidden">
+<div class="h-full rounded-full bg-primary shadow-[0_0_12px_rgba(8,188,212,0.8)]" style="width: 65%;"></div>
 </div>
-</div>
-</div>
-</section>
-<!-- SectionHeader -->
-<div class="px-4 pt-4">
-<h2 class="text-white text-[20px] font-bold leading-tight tracking-tight">Practice Modes</h2>
-</div>
-<!-- ImageGrid (Practice Modes) -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-<!-- Solo Practice Card -->
-<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-slate-navy card-border-glow h-48 flex flex-col justify-end p-5 transition-transform active:scale-[0.98]">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 opacity-40" data-alt="Abstract minimalist representation of solo learning" style='background-image: linear-gradient(to top, #1E293B 20%, transparent 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7g379RyQiKQKULSzE7Bip6eaL7V7CwABAqZnyfK03-KMv5_kkXjD-8UDAAAphHJcJICpepDk_zSZwUbABY2qwX4hnskaLgfxhs35vkOFaaV7XzXu0RJtKgl7s8IdbJZyLlmoVyiJ70XTWdZDMQzopjwYeBxyvsyQJ4ufuKb9f9-Mcb-RIESJdpq0YMai3HTWX2_rNMoRKQ-QaFO3NVgNzy7hPU0ZyzysPcvUrRf-ItvO9YM5Ce8lD_YV_VvCg7khGQ1LpgIFjUMqc");'>
-</div>
-<div class="relative z-10">
-<div class="size-10 bg-primary/20 rounded-lg flex items-center justify-center mb-3">
-<span class="material-symbols-outlined text-primary">person</span>
-</div>
-<h3 class="text-xl font-bold text-arctic-white">Solo Practice</h3>
-<p class="text-slate-400 text-sm mt-1">Personalized AI drills</p>
+<div class="flex items-center gap-2 justify-center">
+<span class="material-symbols-outlined text-[#4ADE80] text-sm">auto_awesome</span>
+<p class="text-[#8fc5cc] text-sm font-normal leading-normal">Connecting to linguistic AI engines</p>
 </div>
 </div>
-<!-- Group Practice Card -->
-<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-slate-navy card-border-glow h-48 flex flex-col justify-end p-5 transition-transform active:scale-[0.98]">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 opacity-40" data-alt="Abstract representation of group communication" style='background-image: linear-gradient(to top, #1E293B 20%, transparent 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5QS-rwha57KW9xiPFigneb-v_PYWgyPxMDQVUoZ1C9nxfeZC8uyOydPH4R4O58iMJqypnXDXSmyMRJTD4TrpfqV4aD1uK7ZYeXmmSGL338NTruq3HGO7njV-iW2FqmZKb3uRlkWX8XRU10uUrv6P1Q-Zmwa4Fe8dxOnNe9UirWYPwRz6E26zuzhkUlNnNP9VbS1tWnyWFK28EkNArGZ6z-LpdchFGaQO6Xgqw1QNo6xufgc4DakMG7udTQXlvsFiQuKDEOnXgWO0f");'>
-</div>
-<div class="relative z-10">
-<div class="size-10 bg-primary/20 rounded-lg flex items-center justify-center mb-3">
-<span class="material-symbols-outlined text-primary">groups</span>
-</div>
-<h3 class="text-xl font-bold text-arctic-white">Group Practice</h3>
-<p class="text-slate-400 text-sm mt-1">Join a live conversation room</p>
 </div>
 </div>
-</section>
-<!-- Recommended Section -->
-<div class="px-4 pt-4">
-<h2 class="text-white text-[20px] font-bold leading-tight tracking-tight">Recommended for You</h2>
+<!-- Bottom Spacing for iOS Home Indicator -->
+<div class="h-10"></div>
 </div>
-<section class="px-4 py-4 flex flex-col gap-3">
-<div class="flex items-center gap-4 bg-slate-navy/50 p-4 rounded-xl border border-slate-800">
-<div class="size-12 rounded-lg bg-slate-800 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">menu_book</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-arctic-white">Business Etiquette</h4>
-<p class="text-xs text-slate-400">Lesson 4 of 12 • 10 mins</p>
-</div>
-<button class="size-8 rounded-full bg-slate-800 flex items-center justify-center text-arctic-white">
-<span class="material-symbols-outlined text-sm">play_arrow</span>
-</button>
-</div>
-<div class="flex items-center gap-4 bg-slate-navy/50 p-4 rounded-xl border border-slate-800">
-<div class="size-12 rounded-lg bg-slate-800 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">translate</span>
-</div>
-<div class="flex-1">
-<h4 class="font-bold text-arctic-white">Idiomatic Expressions</h4>
-<p class="text-xs text-slate-400">Lesson 1 of 5 • 15 mins</p>
-</div>
-<button class="size-8 rounded-full bg-slate-800 flex items-center justify-center text-arctic-white">
-<span class="material-symbols-outlined text-sm">play_arrow</span>
-</button>
-</div>
-</section>
-</main>
-<!-- Bottom Navigation Bar -->
-<nav class="fixed bottom-0 w-full bg-background-light dark:bg-midnight-indigo border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-20 pb-8">
-<div class="flex flex-col items-center gap-1 text-primary">
-<span class="material-symbols-outlined text-[28px]">home</span>
-<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-slate-400">
-<span class="material-symbols-outlined text-[28px]">local_library</span>
-<span class="text-[10px] font-bold uppercase tracking-widest">Library</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-slate-400">
-<span class="material-symbols-outlined text-[28px]">monitoring</span>
-<span class="text-[10px] font-bold uppercase tracking-widest">Stats</span>
-</div>
-<div class="flex flex-col items-center gap-1 text-slate-400">
-<span class="material-symbols-outlined text-[28px]">person_outline</span>
-<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
-</div>
-</nav>
 </body></html>
